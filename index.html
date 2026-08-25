@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>張式豪 ・ 簡暄穎 歸寧宴邀請</title>
+<meta name="description" content="2026.11.22 (日) 中午 ・ 台中長榮桂冠酒店 玫瑰廳 — 誠摯邀請您">
+<meta name="theme-color" content="#FCF2E0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="張式豪 ・ 簡暄穎 歸寧宴邀請">
+<meta property="og:description" content="2026.11.22 (日) 中午 ・ 台中長榮桂冠酒店 玫瑰廳">
+<meta property="og:image" content="photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+TC:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FCF2E0;
+    --paper-deep:#F3E3C9;
+    --maple:#C8352B;
+    --maple-bright:#DC4B36;
+    --maple-deep:#8E1F18;
+    --gold:#C9A227;
+    --gold-pale:#E5CE96;
+    --gold-deep:#9A7521;
+    --peacock:#1F6B5E;
+    --hanada:#2E8B9E;
+    --murasaki:#6B4C8A;
+    --yamabuki:#D9A03C;
+    --coral:#D9705B;
+    --rule:rgba(200,53,43,.34);
+    --rule-soft:rgba(200,53,43,.16);
+    --gold-line:rgba(201,162,39,.5);
+    --ink:#3E2820;
+    --ink-soft:#6F574A;
+    --display:'Cormorant Garamond',Georgia,serif;
+    --han:'Noto Serif TC',serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--han);font-weight:300;
+    line-height:1.9;letter-spacing:.05em;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+
+  /* ── 背景層 ── */
+  .bg-wash,.bg-shippou,.deco-frame,.leaves{position:fixed;inset:0;pointer-events:none;}
+  .bg-wash{
+    z-index:0;
+    background:
+      radial-gradient(58% 40% at 76% 4%, rgba(200,53,43,.18), transparent 62%),
+      radial-gradient(52% 36% at 20% 96%, rgba(31,107,94,.14), transparent 64%),
+      radial-gradient(46% 34% at 6% 34%, rgba(107,76,138,.12), transparent 66%),
+      radial-gradient(44% 30% at 94% 66%, rgba(217,160,60,.16), transparent 66%);
+  }
+  .bg-shippou{z-index:0;width:100%;height:100%;display:block;}
+
+  .deco-frame{z-index:4;}
+  .deco-frame-inner{
+    position:absolute;inset:8px;
+    border:1px solid var(--rule);
+    outline:1px solid var(--gold-line);outline-offset:3px;
+  }
+  .stud{position:absolute;width:6px;height:6px;background:var(--maple);transform:rotate(45deg);opacity:.55;}
+  .s-t{top:5px;left:50%;margin-left:-3px;} .s-b{bottom:5px;left:50%;margin-left:-3px;}
+  .s-l{left:5px;top:50%;margin-top:-3px;}  .s-r{right:5px;top:50%;margin-top:-3px;}
+  .corner{position:absolute;width:54px;height:54px;color:var(--gold-deep);}
+  .corner svg{width:100%;height:100%;display:block;}
+  .c-tl{top:8px;left:8px;} .c-tr{top:8px;right:8px;transform:scaleX(-1);}
+  .c-bl{bottom:8px;left:8px;transform:scaleY(-1);} .c-br{bottom:8px;right:8px;transform:scale(-1,-1);}
+
+  .leaves{z-index:1;overflow:hidden;}
+  .leaf{position:absolute;top:-10vh;opacity:0;animation:fall linear infinite;}
+  .leaf svg{width:100%;height:100%;display:block;}
+  @keyframes fall{
+    0%{opacity:0;transform:translate3d(0,-10vh,0) rotate(0deg);}
+    9%{opacity:.6;}
+    50%{transform:translate3d(36px,50vh,0) rotate(190deg);}
+    84%{opacity:.4;}
+    100%{opacity:0;transform:translate3d(-14px,112vh,0) rotate(430deg);}
+  }
+
+  .wrap{position:relative;z-index:2;max-width:660px;margin:0 auto;padding:0 32px;}
+
+  /* ── 通用 ── */
+  .eyebrow{
+    font-family:var(--display);font-size:.72rem;font-weight:400;
+    letter-spacing:.34em;text-indent:.34em;color:var(--gold-deep);
+    text-transform:uppercase;margin:0;
+  }
+  .orn{display:flex;align-items:center;justify-content:center;gap:9px;}
+  .orn i{display:block;height:1px;width:52px;background:linear-gradient(to right,transparent,var(--gold));}
+  .orn i:last-of-type{background:linear-gradient(to left,transparent,var(--gold));}
+  .orn .dm{width:5px;height:5px;background:var(--yamabuki);transform:rotate(45deg);}
+  .orn .lf{width:20px;color:var(--peacock);}
+  .orn .lf svg{width:100%;height:auto;display:block;}
+
+  /* ── HERO ── */
+  .hero{
+    position:relative;z-index:2;min-height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:72px 32px 60px;
+  }
+  .hero > *{flex:0 0 auto;}
+
+  .crest{width:min(50vw,182px);color:var(--maple);margin:0 auto;}
+  .crest svg{width:100%;height:auto;display:block;overflow:visible;}
+  .crest .ring,.crest .ring2{opacity:0;animation:fadeIn 1.3s .2s ease forwards;}
+  .crest .ring2{animation-delay:.5s;}
+  .crest .blade{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.2s .55s cubic-bezier(.4,0,.2,1) forwards;}
+  .crest .trace{stroke-dasharray:90;stroke-dashoffset:90;animation:draw 1.4s ease forwards;}
+  .crest .node{opacity:0;transform-box:fill-box;transform-origin:center;
+               animation:pop .5s cubic-bezier(.34,1.56,.64,1) forwards;}
+  .crest .arc{opacity:0;animation:fadeIn 1.2s 3.1s ease forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes fadeIn{to{opacity:1;}}
+  @keyframes pop{from{opacity:0;transform:scale(.2);}to{opacity:1;transform:scale(1);}}
+
+  .stem-rule{height:0;width:1px;margin:22px auto 0;
+    background:linear-gradient(to bottom,var(--gold-pale),transparent);
+    animation:drawDown 1.3s 3.2s cubic-bezier(.22,1,.36,1) forwards;}
+  @keyframes drawDown{to{height:42px;}}
+
+  .names{display:flex;justify-content:center;align-items:flex-start;gap:30px;margin:24px 0 0;}
+  .ncol{display:flex;flex-direction:column;align-items:center;opacity:0;animation:riseIn 1.5s ease forwards;}
+  .ncol:first-child{animation-delay:3.5s;} .ncol:last-child{animation-delay:3.8s;}
+  .nhan{display:flex;flex-direction:column;align-items:center;gap:.18em;
+        font-size:2.55rem;line-height:1.05;color:var(--maple);}
+  .nlat{font-family:var(--display);font-style:italic;font-size:.82rem;
+        letter-spacing:.14em;color:var(--gold-deep);margin-top:14px;white-space:nowrap;}
+  .tie{align-self:center;margin-top:30px;color:var(--maple-bright);opacity:0;animation:riseIn 1.3s 4.05s ease forwards;}
+  .tie svg{width:24px;height:24px;display:block;}
+
+  .hero-title{font-size:1rem;letter-spacing:.7em;text-indent:.7em;color:var(--ink-soft);
+              margin:26px 0 0;opacity:0;animation:riseIn 1.3s 4.25s ease forwards;}
+  .hero-datewrap{margin:22px 0 0;opacity:0;animation:riseIn 1.3s 4.45s ease forwards;}
+  .hero-date{font-family:var(--display);font-size:2.5rem;font-weight:400;
+             letter-spacing:.1em;color:var(--maple);margin:14px 0 5px;}
+  .hero-meta{font-size:.86rem;letter-spacing:.18em;color:var(--ink-soft);margin:0;}
+  .hero-venue{margin-top:24px;opacity:0;animation:riseIn 1.3s 4.65s ease forwards;}
+  .hero-addr{font-size:.8rem;color:var(--ink-soft);letter-spacing:.08em;margin:6px 0 0;
+             opacity:0;animation:riseIn 1.3s 4.75s ease forwards;}
+  .scroll-cue{position:absolute;bottom:34px;left:50%;font-family:var(--display);
+    font-size:.62rem;letter-spacing:.34em;text-indent:.34em;color:var(--gold-deep);
+    opacity:0;animation:riseIn 1.3s 4.9s ease forwards, floaty 2.8s 6s ease-in-out infinite;}
+  @keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes floaty{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+  /* ── 區塊 ── */
+  .section{padding:76px 0;}
+  .section + .section{border-top:1px solid var(--rule-soft);}
+  .section-head{text-align:center;margin-bottom:34px;}
+  .section-title{font-size:1.3rem;font-weight:300;letter-spacing:.34em;text-indent:.34em;
+                 color:var(--maple);margin:14px 0 0;}
+
+  .prose p{margin:0 0 1.15em;font-size:.98rem;line-height:2.1;text-align:justify;}
+  .prose p:last-child{margin-bottom:0;}
+  .prose .lead{color:var(--maple);letter-spacing:.12em;}
+  .sign{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:26px;}
+  .sign .who{color:var(--maple);letter-spacing:.14em;font-size:.95rem;}
+  .seal{display:inline-flex;align-items:center;justify-content:center;
+        width:38px;height:38px;background:var(--maple);color:var(--paper);
+        font-family:var(--han);font-size:1.15rem;line-height:1;border-radius:3px;
+        border:none;padding:0;cursor:pointer;
+        box-shadow:0 0 0 2px var(--paper) inset, 0 0 0 3px var(--maple) inset;
+        transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s ease;}
+  .seal:hover{transform:rotate(-4deg) scale(1.06);}
+  .seal:active{transform:scale(.9);}
+  .seal.stamped{animation:stamp .55s cubic-bezier(.34,1.56,.64,1);}
+  @keyframes stamp{
+    0%{transform:scale(1) rotate(0);}
+    28%{transform:scale(.82) rotate(-7deg);}
+    60%{transform:scale(1.14) rotate(4deg);}
+    100%{transform:scale(1) rotate(0);}
+  }
+  .burst{position:fixed;z-index:5;pointer-events:none;will-change:transform,opacity;}
+  .burst svg{width:100%;height:100%;display:block;}
+
+  .card{position:relative;padding:34px 26px;
+        background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(243,227,201,.42));
+        border:1px solid var(--rule);}
+  .card-pad{position:absolute;width:10px;height:10px;border-radius:50%;
+            border:2px solid var(--gold);background:var(--paper);}
+  .card-pad.tl{top:-6px;left:-6px;} .card-pad.tr{top:-6px;right:-6px;}
+  .card-pad.bl{bottom:-6px;left:-6px;} .card-pad.br{bottom:-6px;right:-6px;}
+
+  .row{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:16px 0;
+       border-bottom:1px dashed var(--rule-soft);}
+  .row:first-child{padding-top:0;} .row:last-child{border-bottom:none;padding-bottom:0;}
+  .row dt{font-family:var(--display);font-size:.72rem;letter-spacing:.2em;
+          color:var(--kc,var(--gold-deep));text-transform:uppercase;padding-top:.4em;margin:0;}
+  .row dd{margin:0;font-size:1rem;line-height:1.8;color:var(--maple);}
+  .row dd small{display:block;font-size:.8rem;color:var(--ink-soft);letter-spacing:.06em;margin-top:2px;}
+  .row:nth-of-type(1){--kc:var(--maple);} .row:nth-of-type(2){--kc:var(--peacock);}
+  .row:nth-of-type(3){--kc:var(--murasaki);} .row:nth-of-type(4){--kc:var(--yamabuki);}
+
+  .countdown{text-align:center;margin-top:36px;}
+  .cd-frame{display:inline-flex;flex-direction:column;align-items:center;position:relative;
+            padding:22px 42px;border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);}
+  .cd-frame::before,.cd-frame::after{content:"";position:absolute;top:50%;width:7px;height:7px;
+    border-radius:50%;transform:translateY(-50%);border:2px solid var(--gold);background:var(--paper);}
+  .cd-frame::before{left:-4px;} .cd-frame::after{right:-4px;}
+  .cd-num{font-family:var(--display);font-size:3.4rem;font-weight:400;line-height:1;color:var(--maple);}
+  .cd-label{font-family:var(--display);font-size:.72rem;letter-spacing:.28em;
+            text-indent:.28em;color:var(--gold-deep);margin-top:12px;}
+
+  .btn{display:block;width:100%;text-align:center;padding:17px 20px;
+       font-family:var(--han);font-size:.95rem;font-weight:400;
+       letter-spacing:.3em;text-indent:.3em;text-decoration:none;
+       border:1px solid var(--maple);color:var(--maple);background:transparent;
+       transition:background .35s ease,color .35s ease,border-color .35s ease;}
+  .btn + .btn{margin-top:12px;}
+  .btn:hover,.btn:focus-visible{background:var(--maple);color:var(--paper);}
+  .btn-solid{background:var(--maple);color:var(--paper);
+             box-shadow:0 0 0 1px var(--paper) inset, 0 0 0 3px rgba(201,162,39,.6) inset;}
+  .btn-solid:hover,.btn-solid:focus-visible{background:var(--maple-bright);border-color:var(--maple-bright);}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+  .rsvp-note{text-align:center;font-size:.88rem;color:var(--ink-soft);
+             letter-spacing:.08em;margin:22px 0 26px;line-height:2;}
+  .rsvp-note .dl{color:var(--maple);border-bottom:1px solid var(--maple-bright);padding-bottom:2px;}
+
+  .item{padding:19px 0;border-bottom:1px dashed var(--rule-soft);}
+  .item:last-child{border-bottom:none;padding-bottom:0;}
+  .item h3{display:flex;align-items:center;gap:9px;margin:0 0 7px;
+           font-family:var(--display);font-size:.78rem;font-weight:400;
+           letter-spacing:.2em;color:var(--ac,var(--maple));text-transform:uppercase;}
+  .item h3::before{content:"";width:7px;height:7px;border-radius:50%;
+                   border:2px solid var(--ac,var(--maple));flex:none;}
+  .item p{margin:0;font-size:.94rem;line-height:1.95;}
+  .a1{--ac:var(--peacock);} .a2{--ac:var(--hanada);}
+  .a3{--ac:var(--murasaki);} .a4{--ac:var(--coral);}
+
+  .plist{list-style:none;margin:0;padding:0;}
+  .plist li{display:grid;grid-template-columns:28px 1fr;gap:11px;padding:11px 0;
+            font-size:.94rem;line-height:1.9;}
+  .pn{font-family:var(--display);font-size:.95rem;color:var(--pc,var(--maple));
+      border:1px solid var(--pc,var(--maple));border-radius:50%;
+      width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+      line-height:1;margin-top:.28em;}
+  .pname{color:var(--pc,var(--maple));}
+  .tag{display:inline-block;font-family:var(--display);font-size:.7rem;letter-spacing:.08em;
+       padding:1px 8px;margin-left:8px;border:1px solid var(--gold);color:var(--gold-deep);
+       vertical-align:.14em;}
+  .psub{display:block;font-size:.82rem;color:var(--ink-soft);letter-spacing:.05em;}
+
+  .mapbox{margin:24px 0 0;border:1px solid var(--gold-line);padding:8px;background:#fff;}
+  .parking-svg{width:100%;height:auto;display:block;}
+
+  .photo{position:relative;padding:8px;border:1px solid var(--rule);background:#fff;}
+  .photo .in{padding:5px;border:1px solid var(--gold-line);}
+  .photo img{width:100%;display:block;}
+  .photo-cap{text-align:center;font-size:.84rem;letter-spacing:.3em;text-indent:.3em;
+             color:var(--maple);margin:24px 0 0;}
+
+  .footer{position:relative;z-index:2;max-width:660px;margin:0 auto;
+          text-align:center;padding:64px 32px 84px;border-top:1px solid var(--rule-soft);}
+  .foot-mark{width:64px;margin:0 auto 20px;color:var(--maple);}
+  .foot-mark svg{width:100%;height:auto;display:block;}
+  .foot-names{font-family:var(--display);font-style:italic;font-size:1.5rem;
+              color:var(--maple);letter-spacing:.1em;margin:0 0 6px;}
+  .foot-note{font-family:var(--display);font-size:.74rem;letter-spacing:.2em;
+             color:var(--ink-soft);margin:0;}
+
+  .reveal{opacity:0;transform:translateY(24px);
+          transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+      animation-delay:0ms !important;transition-duration:.01ms !important;}
+    .reveal{opacity:1;transform:none;}
+    .leaves{display:none;}
+    .stem-rule{height:42px;}
+    .crest .blade,.crest .trace{stroke-dashoffset:0;}
+    .crest .ring,.crest .ring2,.crest .node,.crest .arc,
+    .ncol,.tie,.hero-title,.hero-datewrap,.hero-venue,.hero-addr,.scroll-cue{opacity:1;}
+    html{scroll-behavior:auto;}
+  }
+  @media (min-width:600px){
+    .wrap{padding:0 52px;}
+    .deco-frame-inner{inset:14px;}
+    .corner{width:68px;height:68px;}
+    .c-tl{top:14px;left:14px;} .c-tr{top:14px;right:14px;}
+    .c-bl{bottom:14px;left:14px;} .c-br{bottom:14px;right:14px;}
+    .nhan{font-size:3rem;}
+    .hero-date{font-size:2.9rem;}
+    .card{padding:42px 38px;}
+    .row{grid-template-columns:90px 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="leaf-solid" viewBox="0 0 100 100">
+    <path fill="currentColor" d="M50 88C40 78 24 70 12 56Q24 34 46 32L50 44L54 32Q76 34 88 56C76 70 60 78 50 88Z"/>
+    <path stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" d="M50 88v11"/>
+  </symbol>
+</defs></svg>
+
+<div class="bg-wash" aria-hidden="true"></div>
+<canvas class="bg-shippou" id="shippou" aria-hidden="true"></canvas>
+
+<div class="leaves" id="leaves" aria-hidden="true"></div>
+
+<div class="deco-frame" aria-hidden="true">
+  <div class="deco-frame-inner"></div>
+  <span class="stud s-t"></span><span class="stud s-b"></span>
+  <span class="stud s-l"></span><span class="stud s-r"></span>
+  <div class="corner c-tl"></div><div class="corner c-tr"></div>
+  <div class="corner c-bl"></div><div class="corner c-br"></div>
+</div>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="crest">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"
+         role="img" aria-label="張式豪與簡暄穎的婚宴徽記">
+      <defs>
+        <path id="aTop" d="M60 60 m-45 0 a45 45 0 0 1 90 0"/>
+        <path id="aBot" d="M60 60 m-45 0 a45 45 0 0 0 90 0"/>
+      </defs>
+      <circle class="ring" cx="60" cy="60" r="57" stroke="#C9A227" stroke-width=".8"/>
+      <circle class="ring" cx="60" cy="60" r="55" stroke="currentColor" stroke-width="1.1"/>
+      <circle class="ring2" cx="60" cy="60" r="51" stroke="#C9A227" stroke-width=".8" stroke-dasharray="1.5 4.5"/>
+      <g transform="translate(60 60) scale(.72) translate(-50 -62)">
+        <path class="blade" d="M50 88C40 78 24 70 12 56Q24 34 46 32L50 44L54 32Q76 34 88 56C76 70 60 78 50 88Z"
+              stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+        <path class="blade" d="M50 88v12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path class="trace" style="animation-delay:1.5s" d="M50 88V74"/>
+          <path class="trace" style="animation-delay:1.75s" d="M50 74C50 66 38 66 38 58V48"/>
+          <path class="trace" style="animation-delay:1.75s" d="M50 74C50 66 62 66 62 58V48"/>
+          <path class="trace" style="animation-delay:2s" d="M38 58C38 52 26 52 26 46v-2"/>
+          <path class="trace" style="animation-delay:2s" d="M62 58C62 52 74 52 74 46v-2"/>
+          <path class="trace" style="animation-delay:2.15s" d="M50 74V50"/>
+        </g>
+        <g>
+          <circle class="node" style="animation-delay:2.4s"  cx="50" cy="74" r="3.6" fill="#C9A227"/>
+          <circle class="node" style="animation-delay:2.55s" cx="38" cy="58" r="2.8" fill="#1F6B5E"/>
+          <circle class="node" style="animation-delay:2.55s" cx="62" cy="58" r="2.8" fill="#6B4C8A"/>
+          <circle class="node" style="animation-delay:2.7s"  cx="26" cy="44" r="2.8" fill="#2E8B9E"/>
+          <circle class="node" style="animation-delay:2.7s"  cx="38" cy="48" r="2.8" fill="#D9A03C"/>
+          <circle class="node" style="animation-delay:2.7s"  cx="50" cy="50" r="2.8" fill="#C8352B"/>
+          <circle class="node" style="animation-delay:2.7s"  cx="62" cy="48" r="2.8" fill="#2E7D4F"/>
+          <circle class="node" style="animation-delay:2.7s"  cx="74" cy="44" r="2.8" fill="#D9705B"/>
+        </g>
+      </g>
+      <g class="arc" fill="currentColor" font-family="Cormorant Garamond, Georgia, serif" font-size="6.6" letter-spacing="2.4">
+        <text><textPath href="#aTop" xlink:href="#aTop" startOffset="50%" text-anchor="middle">SHI-HAO &amp; ALESSANDRA</textPath></text>
+      </g>
+      <g class="arc" style="animation-delay:3.3s" fill="currentColor" font-family="Cormorant Garamond, Georgia, serif" font-size="6.2" letter-spacing="2.8">
+        <text><textPath href="#aBot" xlink:href="#aBot" startOffset="50%" text-anchor="middle">2026 . 11 . 22</textPath></text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="stem-rule"></div>
+
+  <div class="names">
+    <div class="ncol">
+      <span class="nhan"><span>張</span><span>式</span><span>豪</span></span>
+      <span class="nlat">Shi-Hao</span>
+    </div>
+    <div class="tie" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M12 21s-7.6-4.8-7.6-10.2A4.1 4.1 0 0112 9a4.1 4.1 0 017.6 1.8C19.6 16.2 12 21 12 21z"/>
+      </svg>
+    </div>
+    <div class="ncol">
+      <span class="nhan"><span>簡</span><span>暄</span><span>穎</span></span>
+      <span class="nlat">Alessandra</span>
+    </div>
+  </div>
+
+  <p class="hero-title">歸 寧 之 喜</p>
+  <div class="hero-datewrap">
+    <div class="orn" aria-hidden="true"><i></i><span class="dm"></span><span class="lf"></span><span class="dm"></span><i></i></div>
+    <p class="hero-date">2026 . 11 . 22</p>
+    <p class="hero-meta">星期日 ・ 午宴 ・ 11:30 入席</p>
+  </div>
+  <p class="eyebrow hero-venue">Evergreen Laurel Hotel Taichung</p>
+  <p class="hero-addr">台中長榮桂冠酒店 玫瑰廳</p>
+  <div class="scroll-cue">SCROLL</div>
+</header>
+
+<main class="wrap">
+
+  <!-- 敬邀 -->
+  <section class="section reveal">
+    <div class="section-head">
+      <div class="orn" aria-hidden="true"><i></i><span class="dm"></span><span class="lf"></span><span class="dm"></span><i></i></div>
+      <h2 class="section-title">敬 邀</h2>
+    </div>
+    <div class="prose">
+      <p class="lead">親愛的家人與朋友:</p>
+      <p>2026 年 11 月 22 日中午,我們將在台中長榮桂冠酒店玫瑰廳設宴,誠摯邀請您前來。</p>
+      <p>長榮桂冠是我們一家人最喜歡的聚餐地方,過生日、過年、家裡有喜事,都在這裡。這一次,我們想在這個地方留下更重要的回憶。</p>
+      <p>暄穎是軟體工程師,式豪是中醫師。一個寫程式除錯,一個把脈開方,兩條看起來不相干的路,走著走著成了同一條。暄穎生在秋天,今年秋天,也帶著式豪回到從小長大的地方。</p>
+      <p>那天中午,想請您來坐坐,熱熱鬧鬧吃頓飯,把這一天一起記著。</p>
+      <div class="sign"><span class="who">張式豪 ・ 簡暄穎 敬邀</span><button class="seal" id="seal" type="button" aria-label="蓋上囍印">囍</button></div>
+    </div>
+  </section>
+
+  <!-- 相片 -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">Our Moments</p>
+      <h2 class="section-title">我 們</h2>
+    </div>
+    <figure class="photo" style="margin:0">
+      <div class="in"><img src="photo.jpg" alt="張式豪與簡暄穎" loading="lazy"></div>
+    </figure>
+    <p class="photo-cap">銀 杏 轉 黃 時 , 我 們 回 家</p>
+  </section>
+
+  <!-- 婚宴資訊 -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">The Banquet</p>
+      <h2 class="section-title">婚 宴 資 訊</h2>
+    </div>
+    <div class="card">
+      <span class="card-pad tl"></span><span class="card-pad tr"></span>
+      <span class="card-pad bl"></span><span class="card-pad br"></span>
+      <dl style="margin:0">
+        <div class="row"><dt>Date</dt><dd>2026 年 11 月 22 日<small>星期日</small></dd></div>
+        <div class="row"><dt>Time</dt><dd>11:30 入席 ・ 12:00 開席<small>開席時間請依現場為準</small></dd></div>
+        <div class="row"><dt>Venue</dt><dd>台中長榮桂冠酒店 玫瑰廳<small>台中市西屯區台灣大道二段 666 號</small></dd></div>
+        <div class="row"><dt>Form</dt><dd>歸寧宴 ・ 中式午宴<small>女方宴客</small></dd></div>
+      </dl>
+    </div>
+
+    <div class="countdown">
+      <div class="cd-frame">
+        <div class="cd-num" id="days">—</div>
+        <div class="cd-label" id="daysLabel">距 離 相 聚</div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E4%B8%AD%E9%95%B7%E6%A6%AE%E6%A1%82%E5%86%A0%E9%85%92%E5%BA%97" target="_blank" rel="noopener">開啟地圖導航</a>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BC%B5%E5%BC%8F%E8%B1%AA%20%26%20%E7%B0%A1%E6%9A%84%E7%A9%8E%20%E6%AD%B8%E5%AF%A7%E5%AE%B4&dates=20261122T033000Z/20261122T063000Z&location=%E5%8F%B0%E4%B8%AD%E9%95%B7%E6%A6%AE%E6%A1%82%E5%86%A0%E9%85%92%E5%BA%97%20%E7%8E%AB%E7%91%B0%E5%BB%B3&details=11%3A30%20%E5%85%A5%E5%B8%AD" target="_blank" rel="noopener">加入行事曆</a>
+    </div>
+  </section>
+
+  <!-- 出席回覆 -->
+  <section class="section reveal">
+    <div class="section-head">
+      <div class="orn" aria-hidden="true"><i></i><span class="dm"></span><span class="lf"></span><span class="dm"></span><i></i></div>
+      <h2 class="section-title">出 席 回 覆</h2>
+    </div>
+    <p class="rsvp-note">為方便安排席次與菜色,<br>敬請於 <span class="dl">10 月 18 日</span> 前完成填寫。</p>
+    <a class="btn btn-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSc-StiwplwqLcCyowms8Y9nIT090PfALxRSu6sE-1x6ZMmkrA/viewform" target="_blank" rel="noopener">填寫回覆表單</a>
+  </section>
+
+  <!-- 交通 -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">Getting There</p>
+      <h2 class="section-title">交 通 指 引</h2>
+    </div>
+    <div class="item a1"><h3>自行開車</h3><p>導航輸入「台中長榮桂冠酒店」或「台中市西屯區台灣大道二段 666 號」。國道一號台中交流道下,沿台灣大道往市區約十分鐘。</p></div>
+    <div class="item a2"><h3>捷運</h3><p>綠線至「市政府站」,步行約 15 分鐘。</p></div>
+    <div class="item a3"><h3>公車</h3><p>搭乘 300–310 號至「頂何厝站」,下車即達。站牌在台灣大道二段上,雙向皆有。</p></div>
+    <div class="item a4"><h3>高鐵・台鐵</h3><p>高鐵台中站轉捷運綠線至市政府站;台鐵台中站轉 300–310 號公車,或計程車約 15 分鐘。</p></div>
+  </section>
+
+  <!-- 停車 -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">Parking</p>
+      <h2 class="section-title">停 車 資 訊</h2>
+    </div>
+    <ul class="plist">
+      <li><span class="pn">1</span><span><span class="pname">本酒店停車場</span><span class="tag">酒店附設</span><span class="psub">入口位於台灣大道二段,酒店大門左側車道進入。</span></span></li>
+      <li style="--pc:var(--peacock)"><span class="pn">2</span><span><span class="pname">大利市停車場</span><span class="tag">自費</span><span class="psub">酒店北側,近漢口路一段。</span></span></li>
+      <li style="--pc:var(--murasaki)"><span class="pn">3</span><span><span class="pname">中港經貿大樓停車場</span><span class="tag">自費</span><span class="psub">台灣大道二段對側,近忠明南路。</span></span></li>
+    </ul>
+    <div class="mapbox"><svg class="parking-svg" viewBox="0 0 560 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="台中長榮桂冠酒店周邊停車場位置圖">
+  <style>
+    .mp-road{fill:#E5DCCC}
+    .mp-rl{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:14px;fill:#6E5B4C;letter-spacing:.06em}
+    .mp-rs{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:12px;fill:#7C6857;letter-spacing:.06em}
+    .mp-rmain{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:20px;fill:#4A3B30;letter-spacing:.24em}
+    .mp-dir{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:12.5px;fill:#8A7460;letter-spacing:.05em}
+    .mp-plabel{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:14.5px;letter-spacing:.04em}
+    .mp-en{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:10.5px;fill:#fff;letter-spacing:.02em}
+    .mp-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px}
+    .mp-key{font-family:'Noto Serif TC','Noto Serif CJK TC',serif;font-size:14px;letter-spacing:.04em}
+  </style>
+
+  <rect width="560" height="700" fill="#FCF6EC"/>
+
+  <!-- ── 國道一號 ── -->
+  <rect x="0" y="24" width="560" height="46" fill="#C9A96B"/>
+  <text class="mp-dir" x="16" y="53" fill="#FFF6E6">← 南下 / 往高鐵</text>
+  <text class="mp-dir" x="544" y="53" fill="#FFF6E6" text-anchor="end">北上 →</text>
+  <g transform="translate(260 47)">
+    <circle r="16" fill="#FCF6EC"/>
+    <text class="mp-num" y="6" text-anchor="middle" fill="#9B2A22" font-size="17">1</text>
+  </g>
+
+  <!-- ── 道路 ── -->
+  <rect class="mp-road" x="236" y="70" width="48" height="570"/>
+  <rect class="mp-road" x="50"  y="214" width="186" height="26"/>
+  <rect class="mp-road" x="284" y="214" width="216" height="26"/>
+  <rect class="mp-road" x="284" y="412" width="256" height="26"/>
+  <rect class="mp-road" x="16"  y="572" width="220" height="26"/>
+  <rect class="mp-road" x="284" y="572" width="256" height="26"/>
+  <rect class="mp-road" x="118" y="240" width="22" height="332"/>
+  <rect class="mp-road" x="452" y="120" width="20" height="94"/>
+  <rect class="mp-road" x="478" y="240" width="16" height="172"/>
+
+  <!-- 路名 -->
+  <text class="mp-rmain" x="260" y="352" text-anchor="middle" transform="rotate(90 260 352)">台灣大道二段</text>
+  <text class="mp-rl" x="140" y="206" text-anchor="middle">東興路三段</text>
+  <text class="mp-rl" x="356" y="206" text-anchor="middle">漢口路一段</text>
+  <text class="mp-rl" x="360" y="405" text-anchor="middle">太原路一段</text>
+  <text class="mp-rl" x="122" y="564" text-anchor="middle">忠明南路</text>
+  <text class="mp-rl" x="368" y="564" text-anchor="middle">忠明路</text>
+  <text class="mp-rs" x="129" y="330" text-anchor="middle" transform="rotate(90 129 330)">精明路</text>
+  <text class="mp-rs" x="462" y="167" text-anchor="middle" transform="rotate(90 462 167)">四川路</text>
+  <text class="mp-rs" x="486" y="330" text-anchor="middle" font-size="10.5" transform="rotate(90 486 330)">大有一街</text>
+
+  <!-- 方向 -->
+  <text class="mp-dir" x="300" y="158">↑ 往交流道</text>
+  <text class="mp-dir" x="300" y="452" transform="rotate(90 300 452)">往火車站 ↓</text>
+
+  <!-- ── 頂何厝站 ── -->
+  <g>
+    <g fill="#54728A">
+      <rect x="242" y="152" width="20" height="30" rx="10"/>
+      <rect x="242" y="248" width="20" height="30" rx="10"/>
+    </g>
+    <text x="252" y="172" text-anchor="middle" font-size="9.5" fill="#fff"
+          font-family="'Cormorant Garamond',Georgia,serif" letter-spacing=".06em">BUS</text>
+    <text x="252" y="268" text-anchor="middle" font-size="9.5" fill="#fff"
+          font-family="'Cormorant Garamond',Georgia,serif" letter-spacing=".06em">BUS</text>
+    <rect x="212" y="203" width="76" height="26" rx="3" fill="#6E5B4C"/>
+    <text x="250" y="221" text-anchor="middle" font-size="14" fill="#fff"
+          font-family="'Noto Serif TC','Noto Serif CJK TC',serif" letter-spacing=".05em">頂何厝站</text>
+  </g>
+
+  <!-- ── ② 大利市停車場(自費) ── -->
+  <g>
+    <rect x="298" y="256" width="36" height="42" fill="#C4632F"/>
+    <text class="mp-en" x="303" y="272">入</text><text class="mp-en" x="303" y="286">口</text>
+    <text class="mp-en" x="319" y="269">停</text><text class="mp-en" x="319" y="281">車</text><text class="mp-en" x="319" y="293">場</text>
+    <rect x="342" y="263" width="128" height="28" rx="14" fill="#7E8B5C"/>
+    <text class="mp-plabel" x="356" y="282" fill="#fff">大利市停車場</text>
+    <g transform="translate(490 277)">
+      <circle r="13" fill="#7E8B5C"/>
+      <text class="mp-num" y="5" text-anchor="middle" fill="#fff">2</text>
+    </g>
+  </g>
+
+  <!-- ── ① 長榮桂冠酒店 ── -->
+  <g>
+    <rect x="298" y="320" width="36" height="54" fill="#4F6B4B"/>
+    <text class="mp-en" x="303" y="340">入</text><text class="mp-en" x="303" y="354">口</text>
+    <text class="mp-en" x="319" y="337">停</text><text class="mp-en" x="319" y="349">車</text><text class="mp-en" x="319" y="361">場</text>
+    <rect x="334" y="322" width="136" height="50" fill="#9B2A22"/>
+    <text x="348" y="345" font-size="15" fill="#fff"
+          font-family="'Noto Serif TC','Noto Serif CJK TC',serif" letter-spacing=".12em">長榮桂冠酒店</text>
+    <text x="348" y="362" font-size="7.6" fill="#EFD0C3"
+          font-family="'Cormorant Garamond',Georgia,serif" letter-spacing=".05em">EVERGREEN LAUREL HOTEL</text>
+    <g transform="translate(530 347)">
+      <circle r="17" fill="#9B2A22"/>
+      <circle r="19.5" fill="none" stroke="#9B2A22" stroke-width="1"/>
+      <text class="mp-num" y="6" text-anchor="middle" fill="#fff" font-size="18">1</text>
+    </g>
+  </g>
+
+  <!-- ── ③ 中港經貿大樓停車場(自費) ── -->
+  <g>
+    <rect x="192" y="444" width="36" height="46" fill="#C4632F"/>
+    <text class="mp-en" x="197" y="462">入</text><text class="mp-en" x="197" y="476">口</text>
+    <text class="mp-en" x="213" y="459">停</text><text class="mp-en" x="213" y="471">車</text><text class="mp-en" x="213" y="483">場</text>
+    <rect x="34" y="492" width="150" height="46" rx="14" fill="#7E8B5C"/>
+    <text class="mp-plabel" x="50" y="511" fill="#fff">中港經貿大樓</text>
+    <text class="mp-plabel" x="50" y="530" fill="#fff">停車場</text>
+    <g transform="translate(48 482)">
+      <circle r="13" fill="#7E8B5C"/>
+      <text class="mp-num" y="5" text-anchor="middle" fill="#fff">3</text>
+    </g>
+  </g>
+
+  <!-- ── 圖例 ── -->
+  <line x1="70" y1="650" x2="490" y2="650" stroke="#D9C7A8" stroke-width="1"/>
+  <g transform="translate(0 676)">
+    <g transform="translate(126 0)">
+      <circle r="11" fill="none" stroke="#9B2A22" stroke-width="1.2"/>
+      <text class="mp-num" y="5" text-anchor="middle" fill="#9B2A22" font-size="13">1</text>
+      <text class="mp-key" x="20" y="5" fill="#4A3B30">本酒店停車場</text>
+    </g>
+    <g transform="translate(320 0)">
+      <circle r="11" fill="none" stroke="#7E8B5C" stroke-width="1.2"/>
+      <text class="mp-num" y="5" text-anchor="middle" fill="#7E8B5C" font-size="13">2</text>
+    </g>
+    <g transform="translate(350 0)">
+      <circle r="11" fill="none" stroke="#7E8B5C" stroke-width="1.2"/>
+      <text class="mp-num" y="5" text-anchor="middle" fill="#7E8B5C" font-size="13">3</text>
+      <text class="mp-key" x="20" y="5" fill="#C4632F">自費停車場</text>
+    </g>
+  </g>
+</svg></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="foot-mark" aria-hidden="true">
+    <svg viewBox="6 26 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 88C40 78 24 70 12 56Q24 34 46 32L50 44L54 32Q76 34 88 56C76 70 60 78 50 88Z"
+            stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M50 88v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 88V74"/><path d="M50 74C50 66 38 66 38 58V48"/><path d="M50 74C50 66 62 66 62 58V48"/>
+        <path d="M38 58C38 52 26 52 26 46v-2"/><path d="M62 58C62 52 74 52 74 46v-2"/><path d="M50 74V50"/>
+      </g>
+      <g><circle cx="50" cy="74" r="3.2" fill="#C9A227"/><circle cx="38" cy="58" r="2.4" fill="#1F6B5E"/>
+        <circle cx="62" cy="58" r="2.4" fill="#6B4C8A"/><circle cx="26" cy="44" r="2.4" fill="#2E8B9E"/>
+        <circle cx="38" cy="48" r="2.4" fill="#D9A03C"/><circle cx="50" cy="50" r="2.4" fill="#C8352B"/>
+        <circle cx="62" cy="48" r="2.4" fill="#2E7D4F"/><circle cx="74" cy="44" r="2.4" fill="#D9705B"/></g>
+    </svg>
+  </div>
+  <p class="foot-names">Shi-Hao &amp; Alessandra</p>
+  <p class="foot-note">2026 . 11 . 22 ・ 台中長榮桂冠酒店 玫瑰廳</p>
+</footer>
+
+<script>
+  var CORNER = '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">'
+    + '<path d="M3 46C3 22 22 3 46 3"/><path d="M10 46C10 30 30 10 46 10"/>'
+    + '<path d="M17 46C17 34 34 17 46 17" opacity=".55"/>'
+    + '<path d="M13 30c7-2 12 2 12 8M30 13c-2 7 2 12 8 12"/><path d="M20 22c4 0 7 3 7 7" opacity=".7"/>'
+    + '<g transform="translate(24 24) scale(.19) translate(-50 -62)">'
+    + '<path d="M50 88C40 78 24 70 12 56Q24 34 46 32L50 44L54 32Q76 34 88 56C76 70 60 78 50 88Z" stroke-width="6"/>'
+    + '<path d="M50 88v12" stroke-width="6"/></g>'
+    + '<circle cx="11" cy="55" r="1.9" fill="currentColor" stroke="none"/>'
+    + '<circle cx="55" cy="11" r="1.9" fill="currentColor" stroke="none"/>'
+    + '<circle cx="7" cy="62" r="1.2" fill="currentColor" stroke="none" opacity=".7"/>'
+    + '<circle cx="62" cy="7" r="1.2" fill="currentColor" stroke="none" opacity=".7"/></svg>';
+  var LEAF = '<svg viewBox="6 26 88 82" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<path d="M50 88C40 78 24 70 12 56Q24 34 46 32L50 44L54 32Q76 34 88 56C76 70 60 78 50 88Z"'
+    + ' stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/>'
+    + '<path d="M50 88v12" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></svg>';
+
+  document.querySelectorAll('.corner').forEach(function(el){ el.innerHTML = CORNER; });
+  document.querySelectorAll('.orn .lf').forEach(function(el){ el.innerHTML = LEAF; });
+
+
+  // ── 七寶紋:底層織錦 + 光掃過的互動 ──
+  (function(){
+    var cv = document.getElementById('shippou');
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var JEWEL = ['#C8352B','#1F6B5E','#6B4C8A','#2E8B9E','#D9A03C','#2E7D4F','#D9705B','#C9A227'];
+    var S = 34, R = S / Math.SQRT2, D = 132;   // 格距、半徑、感光範圍
+    var W = 0, H = 0, dpr = 1;
+
+    function hash(i, j){ var h = (i * 73856093) ^ (j * 19349663); return Math.abs(h); }
+
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = cv.clientWidth; H = cv.clientHeight;
+      cv.width = W * dpr; cv.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    // 掃過的光點:沒有輸入時自己緩慢漂移
+    var px = -999, py = -999, idle = 0, t = 0, drifting = true;
+
+    function draw(){
+      ctx.clearRect(0, 0, W, H);
+      var cols = Math.ceil(W / S) + 2, rows = Math.ceil(H / S) + 2;
+
+      for (var j = -1; j < rows; j++){
+        for (var i = -1; i < cols; i++){
+          var cx = i * S, cy = j * S;
+          var h = hash(i, j);
+          var col = JEWEL[h % JEWEL.length];
+
+          // 靜態織錦:少數格子帶淡淡的寶石色
+          var base = (h % 13 === 0) ? 0.038 : 0;
+
+          // 互動:靠近光點的格子亮起來
+          var lit = 0;
+          if (px > -900){
+            var dx = cx - px, dy = cy - py;
+            var d = Math.sqrt(dx * dx + dy * dy);
+            if (d < D){ var f = 1 - d / D; lit = f * f; }
+          }
+
+          var a = base + lit * 0.13;
+          if (a > 0.004){
+            ctx.beginPath();
+            ctx.arc(cx, cy, R, 0, Math.PI * 2);
+            ctx.fillStyle = col;
+            ctx.globalAlpha = a;
+            ctx.fill();
+          }
+
+          ctx.beginPath();
+          ctx.arc(cx, cy, R, 0, Math.PI * 2);
+          ctx.strokeStyle = '#C9A227';
+          ctx.globalAlpha = 0.13 + lit * 0.42;
+          ctx.lineWidth = 0.6 + lit * 0.5;
+          ctx.stroke();
+
+          // 交點上的小金珠
+          if (lit > 0.12){
+            ctx.beginPath();
+            ctx.arc(cx, cy, 1.3, 0, Math.PI * 2);
+            ctx.fillStyle = '#C9A227';
+            ctx.globalAlpha = lit * 0.55;
+            ctx.fill();
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function frame(){
+      t += 0.006;
+      idle++;
+      if (idle > 150) drifting = true;          // 閒置約 2.5 秒後自動漂移
+      if (drifting){
+        px = W * (0.5 + 0.42 * Math.sin(t * 0.9));
+        py = H * (0.5 + 0.34 * Math.sin(t * 1.37 + 1.1));
+      }
+      draw();
+      requestAnimationFrame(frame);
+    }
+
+    function point(x, y){ px = x; py = y; idle = 0; drifting = false; }
+
+    window.addEventListener('resize', function(){ resize(); if (reduce) draw(); });
+    window.addEventListener('pointermove', function(e){ point(e.clientX, e.clientY); }, {passive:true});
+    window.addEventListener('touchmove', function(e){
+      var tt = e.touches[0]; if (tt) point(tt.clientX, tt.clientY);
+    }, {passive:true});
+
+    resize();
+    if (reduce){ px = -999; draw(); } else { frame(); }
+  })();
+
+  // ── 囍印:按一下蓋章,撒出銀杏葉 ──
+  (function(){
+    var seal = document.getElementById('seal');
+    if (!seal) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var TINTS = ['#C8352B','#D9A03C','#1F6B5E','#6B4C8A','#D9705B','#C9A227'];
+
+    seal.addEventListener('click', function(){
+      seal.classList.remove('stamped');
+      void seal.offsetWidth;
+      seal.classList.add('stamped');
+      if (reduce) return;
+
+      var r = seal.getBoundingClientRect();
+      var ox = r.left + r.width / 2, oy = r.top + r.height / 2;
+
+      for (var i = 0; i < 14; i++){
+        (function(){
+          var el = document.createElement('div');
+          var size = 11 + Math.random() * 11;
+          el.className = 'burst';
+          el.style.width = size + 'px';
+          el.style.height = size + 'px';
+          el.style.left = (ox - size / 2) + 'px';
+          el.style.top  = (oy - size / 2) + 'px';
+          el.style.color = TINTS[Math.floor(Math.random() * TINTS.length)];
+          el.innerHTML = '<svg viewBox="0 0 100 100"><use href="#leaf-solid" xlink:href="#leaf-solid"/></svg>';
+          document.body.appendChild(el);
+
+          var ang = -Math.PI / 2 + (Math.random() - 0.5) * 2.4;
+          var dist = 60 + Math.random() * 110;
+          var tx = Math.cos(ang) * dist;
+          var ty = Math.sin(ang) * dist;
+          var spin = (Math.random() - 0.5) * 720;
+
+          el.animate([
+            { transform: 'translate(0,0) rotate(0deg)', opacity: 1 },
+            { transform: 'translate(' + tx.toFixed(1) + 'px,' + (ty * 0.55).toFixed(1) + 'px) rotate(' + (spin/2).toFixed(0) + 'deg)', opacity: 1, offset: 0.42 },
+            { transform: 'translate(' + (tx * 1.15).toFixed(1) + 'px,' + (ty + 190).toFixed(1) + 'px) rotate(' + spin.toFixed(0) + 'deg)', opacity: 0 }
+          ], { duration: 1500 + Math.random() * 900, easing: 'cubic-bezier(.25,.6,.4,1)' })
+            .onfinish = function(){ el.remove(); };
+        })();
+      }
+    });
+  })();
+
+  // 落葉
+  (function(){
+    var host = document.getElementById('leaves');
+    if (!host || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    var tints = ['#C8352B','#D9A03C','#C4632F','#8E8A4A','#D9705B','#1F6B5E'];
+    var n = window.innerWidth < 600 ? 10 : 16;
+    for (var i = 0; i < n; i++) {
+      var size = 13 + Math.random() * 12;
+      var el = document.createElement('div');
+      el.className = 'leaf';
+      el.style.left = (Math.random() * 100).toFixed(2) + '%';
+      el.style.width = size.toFixed(1) + 'px';
+      el.style.height = size.toFixed(1) + 'px';
+      el.style.color = tints[Math.floor(Math.random() * tints.length)];
+      el.style.animationDuration = (15 + Math.random() * 13).toFixed(1) + 's';
+      el.style.animationDelay = (-Math.random() * 26).toFixed(1) + 's';
+      el.innerHTML = '<svg viewBox="0 0 100 100"><use href="#leaf-solid" xlink:href="#leaf-solid"/></svg>';
+      host.appendChild(el);
+    }
+  })();
+
+  // 倒數
+  (function(){
+    var target = new Date('2026-11-22T11:30:00+08:00');
+    var diff = Math.ceil((target - new Date()) / 86400000);
+    var num = document.getElementById('days'), label = document.getElementById('daysLabel');
+    if (!num || !label) return;
+    if (diff > 1)      { num.textContent = diff; label.textContent = '還 有 ' + diff + ' 天'; }
+    else if (diff === 1){ num.textContent = '1';  label.textContent = '就 是 明 天'; }
+    else if (diff === 0){ num.textContent = '今日'; num.style.fontSize='2.2rem'; label.textContent = '我 們 在 玫 瑰 廳 等 你'; }
+    else                { num.textContent = '謝謝'; num.style.fontSize='2.2rem'; label.textContent = '感 謝 有 你 同 在'; }
+  })();
+
+  // 捲動淡入
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
