@@ -12,7 +12,8 @@
 <meta property="og:image" content="photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+TC:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=IBM+Plex+Mono:wght@300;400&family=Noto+Serif+TC:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexkai.css">
 <style>
   :root{
     --paper:#FCF2E0;
@@ -35,6 +36,8 @@
     --ink-soft:#6F574A;
     --display:'Cormorant Garamond',Georgia,serif;
     --han:'Noto Serif TC',serif;
+    --kai:'cwTeXKai','DFKai-SB','BiauKai','Noto Serif TC',serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -255,6 +258,27 @@
   .photo-cap{text-align:center;font-size:.84rem;letter-spacing:.3em;text-indent:.3em;
              color:var(--maple);margin:24px 0 0;}
 
+
+
+  /* ══ 藏名詩 ══ */
+  .poem-wrap{margin:34px 0 0;}
+  .poem{display:flex;flex-direction:row-reverse;justify-content:center;
+        gap:17px;margin:22px auto 0;}
+  .poem-line{display:flex;flex-direction:column;align-items:center;gap:.16em;
+             font-family:var(--kai);font-size:1.34rem;line-height:1.06;
+             color:var(--maple);}
+  .poem-line span:first-child{color:var(--maple-bright);}
+  .poem-mark{display:flex;align-items:center;justify-content:center;gap:11px;
+             margin:24px 0 0;}
+  .poem-mark i{display:block;height:1px;width:26px;
+               background:linear-gradient(to right,transparent,var(--gold-line));}
+  .poem-mark i:last-of-type{background:linear-gradient(to left,transparent,var(--gold-line));}
+  .poem-mark code{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+                  color:var(--gold-deep);}
+  .poem-mark .dot{width:4px;height:4px;background:var(--gold);transform:rotate(45deg);opacity:.7;}
+
+  @media (min-width:600px){ .poem-line{font-size:1.56rem;} .poem{gap:22px;} }
+
   .footer{position:relative;z-index:2;max-width:660px;margin:0 auto;
           text-align:center;padding:64px 32px 84px;border-top:1px solid var(--rule-soft);}
   .foot-mark{width:64px;margin:0 auto 20px;color:var(--maple);}
@@ -399,11 +423,26 @@
       <p class="lead">親愛的家人與朋友:</p>
       <p>2026 年 11 月 22 日中午,我們將在台中長榮桂冠酒店玫瑰廳設宴,誠摯邀請您前來。</p>
       <p>長榮桂冠是我們一家人最喜歡的聚餐地方,過生日、過年、家裡有喜事,都在這裡。這一次,我們想在這個地方留下更重要的回憶。</p>
-      <p>暄穎是軟體工程師,式豪是中醫師。一個寫程式除錯,一個把脈開方,兩條看起來不相干的路,走著走著成了同一條。暄穎生在秋天,今年秋天,我們回到這個熟悉的地方。</p>
+      <p>暄穎是軟體工程師,式豪是中醫師。一個寫程式除錯,一個把脈開方,兩條看起來不相干的路,走著走著成了同一條。暄穎生在秋天,今年秋天,也帶著式豪回到從小長大的地方。</p>
       <p>那天中午,想請您來坐坐,熱熱鬧鬧吃頓飯,把這一天一起記著。</p>
       <div class="sign"><span class="who">張式豪 ・ 簡暄穎 敬邀</span><button class="seal" id="seal" type="button" aria-label="蓋上囍印">囍</button></div>
     </div>
+
+      <div class="poem-wrap">
+        <div class="orn" aria-hidden="true"><i></i><span class="dm"></span><span class="lf"></span><span class="dm"></span><i></i></div>
+        <div class="poem">
+          <div class="poem-line"><span>式</span><span>無</span><span>成</span><span>算</span><span>兩</span><span>相</span><span>投</span></div>
+          <div class="poem-line"><span>豪</span><span>未</span><span>爭</span><span>鋒</span><span>各</span><span>自</span><span>由</span></div>
+          <div class="poem-line"><span>暄</span><span>雨</span><span>初</span><span>晴</span><span>人</span><span>正</span><span>好</span></div>
+          <div class="poem-line"><span>穎</span><span>懷</span><span>相</span><span>照</span><span>不</span><span>須</span><span>求</span></div>
+        </div>
+        <div class="poem-mark">
+          <i></i><code>sudo love</code><span class="dot"></span><code>commit all</code><i></i>
+        </div>
+      </div>
+
   </section>
+
 
   <!-- 相片 -->
   <section class="section reveal">
@@ -456,6 +495,7 @@
     <p class="rsvp-note">為方便安排席次與菜色,<br>敬請於 <span class="dl">10 月 18 日</span> 前完成填寫。</p>
     <a class="btn btn-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSc-StiwplwqLcCyowms8Y9nIT090PfALxRSu6sE-1x6ZMmkrA/viewform" target="_blank" rel="noopener">填寫回覆表單</a>
   </section>
+
 
   <!-- 交通 -->
   <section class="section reveal">
@@ -795,6 +835,7 @@
       }
     });
   })();
+
 
   // 落葉
   (function(){
