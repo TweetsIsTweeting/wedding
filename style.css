@@ -1,0 +1,330 @@
+/* ==========================================================================
+   張式豪 ・ 簡暄穎 歸寧宴電子喜帖
+   2026.11.22 ・ 台中長榮桂冠酒店 玫瑰廳
+
+   目錄
+   01  配色與字型變數 ......... :root
+   02  基本樣式 ............... body / .wrap
+   03  背景層 ................. 七寶紋 canvas、外框、落葉
+   04  通用飾件 ............... .eyebrow / .orn
+   05  封面 ................... .hero / .crest / .names
+   06  區塊與標題 ............. .section
+   07  邀請文與藏名詩 ......... .prose / .sign / .poem
+   08  資訊卡與倒數 ........... .card / .row / .countdown
+   09  按鈕與出席回覆 ......... .btn / .rsvp-note
+   10  交通與停車 ............. .item / .plist / .mapbox
+   11  相片與頁尾 ............. .photo / .footer
+   12  動態與 RWD ............. .reveal / media queries
+
+   常改的地方:配色在 01 的 --maple;字級在各區塊自己的規則裡。
+   ========================================================================== */
+
+:root{
+  --paper:#FCF2E0;
+  --paper-deep:#F3E3C9;
+  --maple:#C8352B;
+  --maple-bright:#DC4B36;
+  --maple-deep:#8E1F18;
+  --gold:#C9A227;
+  --gold-pale:#E5CE96;
+  --gold-deep:#9A7521;
+  --peacock:#1F6B5E;
+  --hanada:#2E8B9E;
+  --murasaki:#6B4C8A;
+  --yamabuki:#D9A03C;
+  --coral:#D9705B;
+  --rule:rgba(200,53,43,.34);
+  --rule-soft:rgba(200,53,43,.16);
+  --gold-line:rgba(201,162,39,.5);
+  --ink:#3E2820;
+  --ink-soft:#6F574A;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --han:'Noto Serif TC',serif;
+  --kai:'cwTeXKai','DFKai-SB','BiauKai','Noto Serif TC',serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--han);font-weight:300;
+  line-height:1.9;letter-spacing:.05em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+
+
+/* ── 03 背景層:七寶紋、外框、落葉 ────────────────────────────────── */
+
+.bg-wash,.bg-shippou,.deco-frame,.leaves{position:fixed;inset:0;pointer-events:none;}
+.bg-wash{
+  z-index:0;
+  background:
+    radial-gradient(58% 40% at 76% 4%, rgba(200,53,43,.18), transparent 62%),
+    radial-gradient(52% 36% at 20% 96%, rgba(31,107,94,.14), transparent 64%),
+    radial-gradient(46% 34% at 6% 34%, rgba(107,76,138,.12), transparent 66%),
+    radial-gradient(44% 30% at 94% 66%, rgba(217,160,60,.16), transparent 66%);
+}
+.bg-shippou{z-index:0;width:100%;height:100%;display:block;}
+
+.deco-frame{z-index:4;}
+.deco-frame-inner{
+  position:absolute;inset:8px;
+  border:1px solid var(--rule);
+  outline:1px solid var(--gold-line);outline-offset:3px;
+}
+.stud{position:absolute;width:6px;height:6px;background:var(--maple);transform:rotate(45deg);opacity:.55;}
+.s-t{top:5px;left:50%;margin-left:-3px;} .s-b{bottom:5px;left:50%;margin-left:-3px;}
+.s-l{left:5px;top:50%;margin-top:-3px;}  .s-r{right:5px;top:50%;margin-top:-3px;}
+.corner{position:absolute;width:54px;height:54px;color:var(--gold-deep);}
+.corner svg{width:100%;height:100%;display:block;}
+.c-tl{top:8px;left:8px;} .c-tr{top:8px;right:8px;transform:scaleX(-1);}
+.c-bl{bottom:8px;left:8px;transform:scaleY(-1);} .c-br{bottom:8px;right:8px;transform:scale(-1,-1);}
+
+.leaves{z-index:1;overflow:hidden;}
+.leaf{position:absolute;top:-10vh;opacity:0;animation:fall linear infinite;}
+.leaf svg{width:100%;height:100%;display:block;}
+@keyframes fall{
+  0%{opacity:0;transform:translate3d(0,-10vh,0) rotate(0deg);}
+  9%{opacity:.6;}
+  50%{transform:translate3d(36px,50vh,0) rotate(190deg);}
+  84%{opacity:.4;}
+  100%{opacity:0;transform:translate3d(-14px,112vh,0) rotate(430deg);}
+}
+
+.wrap{position:relative;z-index:2;max-width:660px;margin:0 auto;padding:0 32px;}
+
+
+/* ── 04 通用飾件 ──────────────────────────────────────────────────── */
+
+.eyebrow{
+  font-family:var(--display);font-size:.72rem;font-weight:400;
+  letter-spacing:.34em;text-indent:.34em;color:var(--gold-deep);
+  text-transform:uppercase;margin:0;
+}
+.orn{display:flex;align-items:center;justify-content:center;gap:9px;}
+.orn i{display:block;height:1px;width:52px;background:linear-gradient(to right,transparent,var(--gold));}
+.orn i:last-of-type{background:linear-gradient(to left,transparent,var(--gold));}
+.orn .dm{width:5px;height:5px;background:var(--yamabuki);transform:rotate(45deg);}
+.orn .lf{width:20px;color:var(--peacock);}
+.orn .lf svg{width:100%;height:auto;display:block;}
+
+
+/* ── 05 封面 ──────────────────────────────────────────────────────── */
+
+.hero{
+  position:relative;z-index:2;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:72px 32px 60px;
+}
+.hero > *{flex:0 0 auto;}
+
+.crest{width:min(50vw,182px);color:var(--maple);margin:0 auto;}
+.crest svg{width:100%;height:auto;display:block;overflow:visible;}
+.crest .ring,.crest .ring2{opacity:0;animation:fadeIn 1.3s .2s ease forwards;}
+.crest .ring2{animation-delay:.5s;}
+.crest .blade{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.2s .55s cubic-bezier(.4,0,.2,1) forwards;}
+.crest .trace{stroke-dasharray:90;stroke-dashoffset:90;animation:draw 1.4s ease forwards;}
+.crest .node{opacity:0;transform-box:fill-box;transform-origin:center;
+             animation:pop .5s cubic-bezier(.34,1.56,.64,1) forwards;}
+.crest .arc{opacity:0;animation:fadeIn 1.2s 3.1s ease forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@keyframes fadeIn{to{opacity:1;}}
+@keyframes pop{from{opacity:0;transform:scale(.2);}to{opacity:1;transform:scale(1);}}
+
+.stem-rule{height:0;width:1px;margin:22px auto 0;
+  background:linear-gradient(to bottom,var(--gold-pale),transparent);
+  animation:drawDown 1.3s 3.2s cubic-bezier(.22,1,.36,1) forwards;}
+@keyframes drawDown{to{height:42px;}}
+
+.names{display:flex;justify-content:center;align-items:flex-start;gap:30px;margin:24px 0 0;}
+.ncol{display:flex;flex-direction:column;align-items:center;opacity:0;animation:riseIn 1.5s ease forwards;}
+.ncol:first-child{animation-delay:3.5s;} .ncol:last-child{animation-delay:3.8s;}
+.nhan{display:flex;flex-direction:column;align-items:center;gap:.18em;
+      font-size:2.55rem;line-height:1.05;color:var(--maple);}
+.nlat{font-family:var(--display);font-style:italic;font-size:.82rem;
+      letter-spacing:.14em;color:var(--gold-deep);margin-top:14px;white-space:nowrap;}
+.tie{align-self:center;margin-top:30px;color:var(--maple-bright);opacity:0;animation:riseIn 1.3s 4.05s ease forwards;}
+.tie svg{width:24px;height:24px;display:block;}
+
+.hero-title{font-size:1rem;letter-spacing:.7em;text-indent:.7em;color:var(--ink-soft);
+            margin:26px 0 0;opacity:0;animation:riseIn 1.3s 4.25s ease forwards;}
+.hero-datewrap{margin:22px 0 0;opacity:0;animation:riseIn 1.3s 4.45s ease forwards;}
+.hero-date{font-family:var(--display);font-size:2.5rem;font-weight:400;
+           letter-spacing:.1em;color:var(--maple);margin:14px 0 5px;}
+.hero-meta{font-size:.86rem;letter-spacing:.18em;color:var(--ink-soft);margin:0;}
+.hero-venue{margin-top:24px;opacity:0;animation:riseIn 1.3s 4.65s ease forwards;}
+.hero-addr{font-size:.8rem;color:var(--ink-soft);letter-spacing:.08em;margin:6px 0 0;
+           opacity:0;animation:riseIn 1.3s 4.75s ease forwards;}
+.scroll-cue{position:absolute;bottom:34px;left:50%;font-family:var(--display);
+  font-size:.62rem;letter-spacing:.34em;text-indent:.34em;color:var(--gold-deep);
+  opacity:0;animation:riseIn 1.3s 4.9s ease forwards, floaty 2.8s 6s ease-in-out infinite;}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes floaty{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+
+/* ── 06 區塊與標題 ────────────────────────────────────────────────── */
+
+.section{padding:76px 0;}
+.section + .section{border-top:1px solid var(--rule-soft);}
+.section-head{text-align:center;margin-bottom:34px;}
+.section-title{font-size:1.3rem;font-weight:300;letter-spacing:.34em;text-indent:.34em;
+               color:var(--maple);margin:14px 0 0;}
+
+.prose p{margin:0 0 1.15em;font-size:.98rem;line-height:2.1;text-align:justify;}
+.prose p:last-child{margin-bottom:0;}
+.prose .lead{color:var(--maple);letter-spacing:.12em;}
+.sign{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:26px;}
+.sign .who{color:var(--maple);letter-spacing:.14em;font-size:.95rem;}
+.seal{display:inline-flex;align-items:center;justify-content:center;
+      width:38px;height:38px;background:var(--maple);color:var(--paper);
+      font-family:var(--han);font-size:1.15rem;line-height:1;border-radius:3px;
+      border:none;padding:0;cursor:pointer;
+      box-shadow:0 0 0 2px var(--paper) inset, 0 0 0 3px var(--maple) inset;
+      transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s ease;}
+.seal:hover{transform:rotate(-4deg) scale(1.06);}
+.seal:active{transform:scale(.9);}
+.seal.stamped{animation:stamp .55s cubic-bezier(.34,1.56,.64,1);}
+@keyframes stamp{
+  0%{transform:scale(1) rotate(0);}
+  28%{transform:scale(.82) rotate(-7deg);}
+  60%{transform:scale(1.14) rotate(4deg);}
+  100%{transform:scale(1) rotate(0);}
+}
+.burst{position:fixed;z-index:5;pointer-events:none;will-change:transform,opacity;}
+.burst svg{width:100%;height:100%;display:block;}
+
+.card{position:relative;padding:34px 26px;
+      background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(243,227,201,.42));
+      border:1px solid var(--rule);}
+.card-pad{position:absolute;width:10px;height:10px;border-radius:50%;
+          border:2px solid var(--gold);background:var(--paper);}
+.card-pad.tl{top:-6px;left:-6px;} .card-pad.tr{top:-6px;right:-6px;}
+.card-pad.bl{bottom:-6px;left:-6px;} .card-pad.br{bottom:-6px;right:-6px;}
+
+.row{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:16px 0;
+     border-bottom:1px dashed var(--rule-soft);}
+.row:first-child{padding-top:0;} .row:last-child{border-bottom:none;padding-bottom:0;}
+.row dt{font-family:var(--display);font-size:.72rem;letter-spacing:.2em;
+        color:var(--kc,var(--gold-deep));text-transform:uppercase;padding-top:.4em;margin:0;}
+.row dd{margin:0;font-size:1rem;line-height:1.8;color:var(--maple);}
+.row dd small{display:block;font-size:.8rem;color:var(--ink-soft);letter-spacing:.06em;margin-top:2px;}
+.row:nth-of-type(1){--kc:var(--maple);} .row:nth-of-type(2){--kc:var(--peacock);}
+.row:nth-of-type(3){--kc:var(--murasaki);} .row:nth-of-type(4){--kc:var(--yamabuki);}
+
+.countdown{text-align:center;margin-top:36px;}
+.cd-frame{display:inline-flex;flex-direction:column;align-items:center;position:relative;
+          padding:22px 42px;border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);}
+.cd-frame::before,.cd-frame::after{content:"";position:absolute;top:50%;width:7px;height:7px;
+  border-radius:50%;transform:translateY(-50%);border:2px solid var(--gold);background:var(--paper);}
+.cd-frame::before{left:-4px;} .cd-frame::after{right:-4px;}
+.cd-num{font-family:var(--display);font-size:3.4rem;font-weight:400;line-height:1;color:var(--maple);}
+.cd-label{font-family:var(--display);font-size:.72rem;letter-spacing:.28em;
+          text-indent:.28em;color:var(--gold-deep);margin-top:12px;}
+
+.btn{display:block;width:100%;text-align:center;padding:17px 20px;
+     font-family:var(--han);font-size:.95rem;font-weight:400;
+     letter-spacing:.3em;text-indent:.3em;text-decoration:none;
+     border:1px solid var(--maple);color:var(--maple);background:transparent;
+     transition:background .35s ease,color .35s ease,border-color .35s ease;}
+.btn + .btn{margin-top:12px;}
+.btn:hover,.btn:focus-visible{background:var(--maple);color:var(--paper);}
+.btn-solid{background:var(--maple);color:var(--paper);
+           box-shadow:0 0 0 1px var(--paper) inset, 0 0 0 3px rgba(201,162,39,.6) inset;}
+.btn-solid:hover,.btn-solid:focus-visible{background:var(--maple-bright);border-color:var(--maple-bright);}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+.rsvp-note{text-align:center;font-size:.88rem;color:var(--ink-soft);
+           letter-spacing:.08em;margin:22px 0 26px;line-height:2;}
+.rsvp-note .dl{color:var(--maple);border-bottom:1px solid var(--maple-bright);padding-bottom:2px;}
+
+.item{padding:19px 0;border-bottom:1px dashed var(--rule-soft);}
+.item:last-child{border-bottom:none;padding-bottom:0;}
+.item h3{display:flex;align-items:center;gap:9px;margin:0 0 7px;
+         font-family:var(--display);font-size:.78rem;font-weight:400;
+         letter-spacing:.2em;color:var(--ac,var(--maple));text-transform:uppercase;}
+.item h3::before{content:"";width:7px;height:7px;border-radius:50%;
+                 border:2px solid var(--ac,var(--maple));flex:none;}
+.item p{margin:0;font-size:.94rem;line-height:1.95;}
+.a1{--ac:var(--peacock);} .a2{--ac:var(--hanada);}
+.a3{--ac:var(--murasaki);} .a4{--ac:var(--coral);}
+
+.plist{list-style:none;margin:0;padding:0;}
+.plist li{display:grid;grid-template-columns:28px 1fr;gap:11px;padding:11px 0;
+          font-size:.94rem;line-height:1.9;}
+.pn{font-family:var(--display);font-size:.95rem;color:var(--pc,var(--maple));
+    border:1px solid var(--pc,var(--maple));border-radius:50%;
+    width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+    line-height:1;margin-top:.28em;}
+.pname{color:var(--pc,var(--maple));}
+.tag{display:inline-block;font-family:var(--display);font-size:.7rem;letter-spacing:.08em;
+     padding:1px 8px;margin-left:8px;border:1px solid var(--gold);color:var(--gold-deep);
+     vertical-align:.14em;}
+.psub{display:block;font-size:.82rem;color:var(--ink-soft);letter-spacing:.05em;}
+
+.mapbox{margin:24px 0 0;border:1px solid var(--gold-line);padding:8px;background:#fff;}
+.parking-svg{width:100%;height:auto;display:block;}
+
+.photo{position:relative;padding:8px;border:1px solid var(--rule);background:#fff;}
+.photo .in{padding:5px;border:1px solid var(--gold-line);}
+.photo img{width:100%;display:block;}
+.photo-cap{text-align:center;font-size:.84rem;letter-spacing:.3em;text-indent:.3em;
+           color:var(--maple);margin:24px 0 0;}
+
+
+
+
+/* ── 07 藏名詩與戒指刻字 ──────────────────────────────────────────── */
+
+.poem-wrap{margin:34px 0 0;}
+.poem{display:flex;flex-direction:row-reverse;justify-content:center;
+      gap:17px;margin:22px auto 0;}
+.poem-line{display:flex;flex-direction:column;align-items:center;gap:.16em;
+           font-family:var(--kai);font-size:1.34rem;line-height:1.06;
+           color:var(--maple);}
+.poem-line span:first-child{color:var(--maple-bright);}
+.poem-mark{display:flex;align-items:center;justify-content:center;gap:11px;
+           margin:24px 0 0;}
+.poem-mark i{display:block;height:1px;width:26px;
+             background:linear-gradient(to right,transparent,var(--gold-line));}
+.poem-mark i:last-of-type{background:linear-gradient(to left,transparent,var(--gold-line));}
+.poem-mark code{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+                color:var(--gold-deep);}
+.poem-mark .dot{width:4px;height:4px;background:var(--gold);transform:rotate(45deg);opacity:.7;}
+
+@media (min-width:600px){ .poem-line{font-size:1.56rem;} .poem{gap:22px;} }
+
+.footer{position:relative;z-index:2;max-width:660px;margin:0 auto;
+        text-align:center;padding:64px 32px 84px;border-top:1px solid var(--rule-soft);}
+.foot-mark{width:64px;margin:0 auto 20px;color:var(--maple);}
+.foot-mark svg{width:100%;height:auto;display:block;}
+.foot-names{font-family:var(--display);font-style:italic;font-size:1.5rem;
+            color:var(--maple);letter-spacing:.1em;margin:0 0 6px;}
+.foot-note{font-family:var(--display);font-size:.74rem;letter-spacing:.2em;
+           color:var(--ink-soft);margin:0;}
+
+.reveal{opacity:0;transform:translateY(24px);
+        transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:none;}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    animation-delay:0ms !important;transition-duration:.01ms !important;}
+  .reveal{opacity:1;transform:none;}
+  .leaves{display:none;}
+  .stem-rule{height:42px;}
+  .crest .blade,.crest .trace{stroke-dashoffset:0;}
+  .crest .ring,.crest .ring2,.crest .node,.crest .arc,
+  .ncol,.tie,.hero-title,.hero-datewrap,.hero-venue,.hero-addr,.scroll-cue{opacity:1;}
+  html{scroll-behavior:auto;}
+}
+@media (min-width:600px){
+  .wrap{padding:0 52px;}
+  .deco-frame-inner{inset:14px;}
+  .corner{width:68px;height:68px;}
+  .c-tl{top:14px;left:14px;} .c-tr{top:14px;right:14px;}
+  .c-bl{bottom:14px;left:14px;} .c-br{bottom:14px;right:14px;}
+  .nhan{font-size:3rem;}
+  .hero-date{font-size:2.9rem;}
+  .card{padding:42px 38px;}
+  .row{grid-template-columns:90px 1fr;}
+}
