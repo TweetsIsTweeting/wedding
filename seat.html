@@ -58,13 +58,11 @@ button:disabled{opacity:.6;cursor:wait}
 
 #result{margin-top:22px;min-height:1px}
 .found .greet{margin:0;font-size:17px;color:var(--muted)}
-.found .table{margin:2px 0 4px;font-size:44px;font-weight:700;color:var(--maple);letter-spacing:.12em}
-.found .table .dia{display:inline-block;width:14px;height:14px;background:var(--gold);transform:rotate(45deg);margin:0 14px 8px 0;vertical-align:middle}
+.found .table{margin:2px 0 4px;font-size:30px;line-height:1.3;font-weight:700;color:var(--maple);letter-spacing:.08em}
 .notfound{margin:0;padding:14px;border:1px dashed #C9A86A;border-radius:6px;font-size:16px;line-height:1.6;color:var(--ink);background:#FFF9EE}
 
 .map{margin:14px -6px 0}
 .map svg{width:100%;height:auto;display:block}
-.map figcaption{margin-top:6px;font-size:14px;color:var(--muted)}
 .tbl circle{fill:#FFF9EE;stroke:#C9A86A;stroke-width:2}
 .tbl text{fill:#8A7560;font-size:48px;font-weight:700;text-anchor:middle;dominant-baseline:central}
 .tbl.on circle{fill:var(--maple);stroke:var(--gold);stroke-width:5}
@@ -119,7 +117,6 @@ button:disabled{opacity:.6;cursor:wait}
   <text x="105" y="672" font-size="36" font-weight="700" fill="#A32318" text-anchor="middle" dominant-baseline="central">入口</text>
   <text x="105" y="716" font-size="26" fill="#6B5240" text-anchor="middle" dominant-baseline="central">接待桌</text>
 </svg>
-<figcaption>紅色圓圈是您的座位，進門後往右前方走</figcaption>
 </figure>
 </template>
 
@@ -161,7 +158,7 @@ button:disabled{opacity:.6;cursor:wait}
       if (t) {
         const label = /^\d+$/.test(t) ? `第 ${t} 桌` : t;
         out.innerHTML = `<div class="found"><p class="greet">${esc(raw)} 您好，您的座位在</p>` +
-          `<p class="table"><span class="dia"></span>${label}</p></div>`;
+          `<p class="table">${label}</p></div>`;
         out.appendChild(document.getElementById('map-tpl').content.cloneNode(true));
         out.querySelectorAll('.tbl').forEach(g => g.classList.toggle('on', g.dataset.t === String(t)));
       } else {
