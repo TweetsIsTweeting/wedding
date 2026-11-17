@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>座位查詢｜張式豪 & 簡暄穎 歸寧宴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=LXGW+WenKai+TC:wght@400;700&display=swap">
+<style>
+:root{
+  --maple:#A32318; --maple-deep:#7A1A12; --gold:#B8860B; --gold-text:#8A6408;
+  --ink:#3A2A20; --muted:#6B5240; --paper:#FFFCF5; --cream:#FCF2E0;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:'LXGW WenKai TC','PingFang TC','Noto Sans TC',serif;
+  background:radial-gradient(ellipse at 50% 30%,#FFF9EE 0%,#FCF2E0 58%,#F3E0C2 100%) fixed;
+  display:flex; justify-content:center; padding:20px 14px 40px;
+}
+.card{
+  position:relative; width:100%; max-width:480px; background:var(--paper);
+  border:3px solid var(--maple); outline:1px solid var(--gold); outline-offset:-8px;
+  padding:34px 22px 28px; text-align:center;
+}
+.card::after{content:"";position:absolute;inset:11px;border:.8px solid var(--maple);pointer-events:none}
+.stud{position:absolute;width:10px;height:10px;background:var(--maple);border:1px solid var(--gold);transform:rotate(45deg)}
+.stud.t{top:-6.5px;left:calc(50% - 5px)} .stud.b{bottom:-6.5px;left:calc(50% - 5px)}
+.stud.l{left:-6.5px;top:calc(50% - 5px)} .stud.r{right:-6.5px;top:calc(50% - 5px)}
+.corner{position:absolute;width:64px;height:64px;pointer-events:none}
+.corner.tl{top:12px;left:12px} .corner.tr{top:12px;right:12px;transform:scaleX(-1)}
+.corner.bl{bottom:12px;left:12px;transform:scaleY(-1)} .corner.br{bottom:12px;right:12px;transform:scale(-1,-1)}
+
+.eyebrow{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;letter-spacing:.16em;color:var(--gold-text)}
+h1{margin:4px 0 0;font-size:32px;line-height:1.3;font-weight:700;color:var(--maple);letter-spacing:.18em;padding-left:.18em}
+.divider{display:block;margin:8px auto 6px}
+.sub{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;color:var(--gold-text)}
+
+form{margin:26px 0 0;display:flex;flex-direction:column;gap:10px;text-align:left}
+label{font-size:17px;font-weight:700;color:var(--ink)}
+.row{display:flex;gap:8px}
+input{
+  flex:1;min-width:0;height:54px;padding:0 14px;font:inherit;font-size:20px;color:var(--ink);
+  background:#fff;border:1.5px solid #C9A86A;border-radius:6px;
+}
+input:focus{outline:3px solid rgba(163,35,24,.25);border-color:var(--maple)}
+button{
+  height:54px;padding:0 20px;font:inherit;font-size:19px;font-weight:700;letter-spacing:.1em;
+  color:#FFF9EE;background:var(--maple);border:0;border-radius:6px;cursor:pointer;
+}
+button:hover{background:var(--maple-deep)}
+button:disabled{opacity:.6;cursor:wait}
+.hint{margin:0;font-size:14px;color:var(--muted)}
+
+#result{margin-top:22px;min-height:1px}
+.found .greet{margin:0;font-size:17px;color:var(--muted)}
+.found .table{margin:2px 0 4px;font-size:44px;font-weight:700;color:var(--maple);letter-spacing:.12em}
+.found .table .dia{display:inline-block;width:14px;height:14px;background:var(--gold);transform:rotate(45deg);margin:0 14px 8px 0;vertical-align:middle}
+.notfound{margin:0;padding:14px;border:1px dashed #C9A86A;border-radius:6px;font-size:16px;line-height:1.6;color:var(--ink);background:#FFF9EE}
+
+.map{margin:14px -6px 0}
+.map svg{width:100%;height:auto;display:block}
+.map figcaption{margin-top:6px;font-size:14px;color:var(--muted)}
+.tbl circle{fill:#FFF9EE;stroke:#C9A86A;stroke-width:2}
+.tbl text{fill:#8A7560;font-size:48px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+.tbl.on circle{fill:var(--maple);stroke:var(--gold);stroke-width:5}
+.tbl.on text{fill:#FFF9EE}
+.foot{margin:22px 0 0;font-size:14px;color:var(--muted);line-height:1.6}
+</style>
+</head>
+<body>
+<main class="card">
+  <span class="stud t"></span><span class="stud b"></span><span class="stud l"></span><span class="stud r"></span>
+  <svg class="corner tl" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 4C24 4 36 11 58 5C44 14 32 16 20 13" fill="none" stroke="#B8860B" stroke-width="1.3"/><path d="M4 6C4 24 11 36 5 58C14 44 16 32 13 20" fill="none" stroke="#B8860B" stroke-width="1.3"/><g transform="translate(9 9) rotate(135) scale(.55)"><path d="M0 0L-1 -10C-14 -14 -20 -26 -16 -34C-8 -38 -3 -34 0 -28C3 -34 8 -38 16 -34C20 -26 14 -14 1 -10Z" fill="#A32318"/></g><circle cx="60" cy="5" r="2" fill="#A32318"/><circle cx="5" cy="60" r="2" fill="#A32318"/></svg>
+  <svg class="corner tr" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 4C24 4 36 11 58 5C44 14 32 16 20 13" fill="none" stroke="#B8860B" stroke-width="1.3"/><path d="M4 6C4 24 11 36 5 58C14 44 16 32 13 20" fill="none" stroke="#B8860B" stroke-width="1.3"/><g transform="translate(9 9) rotate(135) scale(.55)"><path d="M0 0L-1 -10C-14 -14 -20 -26 -16 -34C-8 -38 -3 -34 0 -28C3 -34 8 -38 16 -34C20 -26 14 -14 1 -10Z" fill="#A32318"/></g><circle cx="60" cy="5" r="2" fill="#A32318"/><circle cx="5" cy="60" r="2" fill="#A32318"/></svg>
+  <svg class="corner bl" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 4C24 4 36 11 58 5C44 14 32 16 20 13" fill="none" stroke="#B8860B" stroke-width="1.3"/><path d="M4 6C4 24 11 36 5 58C14 44 16 32 13 20" fill="none" stroke="#B8860B" stroke-width="1.3"/><g transform="translate(9 9) rotate(135) scale(.55)"><path d="M0 0L-1 -10C-14 -14 -20 -26 -16 -34C-8 -38 -3 -34 0 -28C3 -34 8 -38 16 -34C20 -26 14 -14 1 -10Z" fill="#A32318"/></g><circle cx="60" cy="5" r="2" fill="#A32318"/><circle cx="5" cy="60" r="2" fill="#A32318"/></svg>
+  <svg class="corner br" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 4C24 4 36 11 58 5C44 14 32 16 20 13" fill="none" stroke="#B8860B" stroke-width="1.3"/><path d="M4 6C4 24 11 36 5 58C14 44 16 32 13 20" fill="none" stroke="#B8860B" stroke-width="1.3"/><g transform="translate(9 9) rotate(135) scale(.55)"><path d="M0 0L-1 -10C-14 -14 -20 -26 -16 -34C-8 -38 -3 -34 0 -28C3 -34 8 -38 16 -34C20 -26 14 -14 1 -10Z" fill="#A32318"/></g><circle cx="60" cy="5" r="2" fill="#A32318"/><circle cx="5" cy="60" r="2" fill="#A32318"/></svg>
+
+  <p class="eyebrow">Find Your Seat</p>
+  <h1>座位查詢</h1>
+  <svg class="divider" width="220" height="20" viewBox="0 0 300 22" aria-hidden="true"><line x1="10" y1="13" x2="128" y2="13" stroke="#B8860B" stroke-width="1.2"/><line x1="172" y1="13" x2="290" y2="13" stroke="#B8860B" stroke-width="1.2"/><rect x="2" y="9" width="7" height="7" transform="rotate(45 5.5 12.5)" fill="#A32318"/><rect x="291" y="9" width="7" height="7" transform="rotate(45 294.5 12.5)" fill="#A32318"/><g transform="translate(150 20) scale(.5)"><path d="M0 0L-1 -10C-14 -14 -20 -26 -16 -34C-8 -38 -3 -34 0 -28C3 -34 8 -38 16 -34C20 -26 14 -14 1 -10Z" fill="#B8860B"/></g></svg>
+  <p class="sub">張式豪 <span class="amp">&amp;</span> 簡暄穎 歸寧宴<br>2026.11.22（日）台中長榮桂冠酒店 玫瑰廳</p>
+
+  <form id="f" autocomplete="off">
+    <label for="name">請輸入您的全名</label>
+    <div class="row">
+      <input id="name" name="name" type="text" inputmode="text" enterkeyhint="search" placeholder="例如：王小明" required>
+      <button id="go" type="submit">查詢</button>
+    </div>
+    <p class="hint">攜伴或闔家出席的賓客，輸入其中一位的名字即可。</p>
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+
+  <p class="foot">查不到或有任何問題，請洽入口旁的接待桌，<br>現場也有完整的紙本桌次表。</p>
+</main>
+
+<template id="map-tpl">
+<figure class="map">
+<svg viewBox="30 80 990 710" role="img" aria-label="玫瑰廳平面圖">
+  <polygon points="50,95 915,95 915,645 1005,645 1005,775 420,775 420,560 160,560 160,540 50,540" fill="#FFF9EE" stroke="#8A7560" stroke-width="6" stroke-linejoin="round"/>
+  <line x1="50" y1="540" x2="160" y2="540" stroke="#FFF9EE" stroke-width="10"/>
+  <rect x="580" y="100" width="205" height="100" fill="#F3E0C2" stroke="#8A7560" stroke-width="2"/>
+  <text x="682" y="152" font-size="38" font-weight="700" fill="#5A4030" text-anchor="middle" dominant-baseline="central">舞臺</text>
+  <rect x="663" y="415" width="30" height="190" fill="#E8B9AE"/>
+  <rect x="693" y="573" width="210" height="30" fill="#E8B9AE"/>
+  <text x="798" y="589" font-size="24" fill="#7A3A30" text-anchor="middle" dominant-baseline="central">紅毯</text>
+  <g class="tbl" data-t="主桌"><circle cx="673" cy="318" r="64"/><text x="673" y="318" style="font-size:36px">主桌</text></g>
+  <g class="tbl" data-t="2"><circle cx="773" cy="478" r="62"/><text x="773" y="478">2</text></g>
+  <g class="tbl" data-t="3"><circle cx="583" cy="478" r="62"/><text x="583" y="478">3</text></g>
+  <g class="tbl" data-t="4"><circle cx="870" cy="700" r="62"/><text x="870" y="700">4</text></g>
+  <g class="tbl" data-t="5"><circle cx="690" cy="700" r="62"/><text x="690" y="700">5</text></g>
+  <g class="tbl" data-t="6"><circle cx="510" cy="700" r="62"/><text x="510" y="700">6</text></g>
+  <path d="M105 640 L105 572 M90 590 L105 570 L120 590" fill="none" stroke="#A32318" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="105" y="672" font-size="36" font-weight="700" fill="#A32318" text-anchor="middle" dominant-baseline="central">入口</text>
+  <text x="105" y="716" font-size="26" fill="#6B5240" text-anchor="middle" dominant-baseline="central">接待桌</text>
+</svg>
+<figcaption>紅色圓圈是您的座位，進門後往右前方走</figcaption>
+</figure>
+</template>
+
+<script>
+(() => {
+  const f = document.getElementById('f');
+  const input = document.getElementById('name');
+  const btn = document.getElementById('go');
+  const out = document.getElementById('result');
+  const enc = new TextEncoder();
+  let dataP = null;
+
+  const norm = s => s.normalize('NFKC').replace(/\s+/g, '').toLowerCase();
+  const loadData = () => dataP ||= fetch('seats.json', { cache: 'no-cache' }).then(r => {
+    if (!r.ok) throw new Error('seats.json ' + r.status);
+    return r.json();
+  });
+  const hex = buf => [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+
+  async function hashName(name, d) {
+    const key = await crypto.subtle.importKey('raw', enc.encode(name), 'PBKDF2', false, ['deriveBits']);
+    const bits = await crypto.subtle.deriveBits(
+      { name: 'PBKDF2', hash: 'SHA-256', salt: enc.encode(d.salt), iterations: d.iter }, key, 128);
+    return hex(bits);
+  }
+  const esc = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  loadData().catch(() => {});
+
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const raw = input.value.trim();
+    const key = norm(raw);
+    if (!key) return;
+    btn.disabled = true; btn.textContent = '查詢中';
+    try {
+      const d = await loadData();
+      const t = d.map[await hashName(key, d)];
+      if (t) {
+        const label = /^\d+$/.test(t) ? `第 ${t} 桌` : t;
+        out.innerHTML = `<div class="found"><p class="greet">${esc(raw)} 您好，您的座位在</p>` +
+          `<p class="table"><span class="dia"></span>${label}</p></div>`;
+        out.appendChild(document.getElementById('map-tpl').content.cloneNode(true));
+        out.querySelectorAll('.tbl').forEach(g => g.classList.toggle('on', g.dataset.t === String(t)));
+      } else {
+        out.innerHTML = `<p class="notfound">找不到「${esc(raw)}」。<br>請確認是否為完整姓名、沒有錯字，<br>或洽入口旁的接待桌，我們會為您帶位。</p>`;
+      }
+    } catch (err) {
+      out.innerHTML = '<p class="notfound">暫時無法查詢，請洽入口旁的接待桌，我們會為您帶位。</p>';
+    } finally {
+      btn.disabled = false; btn.textContent = '查詢';
+    }
+  });
+})();
+</script>
+</body>
+</html>
